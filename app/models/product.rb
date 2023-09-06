@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
+  validates :name, presence: true
+  validates :price, presence: true
+
   has_many :inventories
   has_many :categories, through: :inventories
 
